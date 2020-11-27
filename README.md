@@ -1,4 +1,4 @@
-# 项目背景
+# 一、项目背景
 
 帮助朋友完成一个简单的图像检测任务。
 
@@ -9,7 +9,7 @@
 
 ![bubble](docs/bubble.gif)
 
-# 项目安装
+# 二、安装
 
 - 主要依赖：
 
@@ -28,7 +28,7 @@
 
 
 
-# 项目流程
+# 三、项目流程
 
 ## 1、图像标注
 
@@ -69,7 +69,7 @@ python tools/train.py config/bubble.yml
 
 
 
-# 模型调用
+# 四、模型调用
 
 - 训练的模型文件：`models/model_bubble.pth`
 - 接口的配置文件：`config.json`
@@ -125,7 +125,7 @@ predictor.visualize(save_path='YOUR_SAVE_IMG_PATH')
 
 
 
-# 对比原仓库
+# 五、对比原仓库
 
 - 1、修改原仓库读取COCO格式的数据集`img_id`字段一定是`int`类型为`str`类型
 - 2、原仓库使用`torch>=1.6`版本进行训练，所得到的模型低于此版本的`torch`无法调用

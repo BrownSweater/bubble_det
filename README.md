@@ -74,9 +74,7 @@ python tools/train.py config/bubble.yml
 - 训练的模型文件：`models/model_bubble.pth`
 - 接口的配置文件：`config.json`
 
-## 1、接口配置文件
-
-根据自己的路径修改项目目录下的`config.json`。
+## 1、配置config.json
 
 | 参数名       | 类型  | 描述                                   |
 | ------------ | ----- | -------------------------------------- |
@@ -86,7 +84,7 @@ python tools/train.py config/bubble.yml
 | score_thresh | float | 阈值                                   |
 
 ```json
-# 示例
+# 参考示例，项目路径下的config.json
 {
     "config":"/Users/wangjunjie/project/nanodet/config/bubble.yml",
     "device": "cpu",
@@ -94,6 +92,11 @@ python tools/train.py config/bubble.yml
     "score_thresh": 0.5
 }
 ```
+
+设置环境变量：`DET_CONFIG_PATH`为你配置的`config.json`的路径
+
+- 使用`shell`进行配置：`export DET_CONFIG_PATH=YOUR_CONFIG_PATH`
+- 使用`python`进行配置：`os.environ['DET_CONFIG_PATH'] = YOUR_CONFIG_PATH`
 
 ## 2、接口格式
 

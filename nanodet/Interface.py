@@ -141,7 +141,7 @@ if __name__ == '__main__':
     device = 'cuda:0' if args['device'] == 'gpu' else args['device']
     predictor = Predictor(cfg, args['model'], device=device, score_thresh=args['score_thresh'])
     # x0, y0, x1, y1, score, label_id
-    files = get_image_list('VOC2007/JPEGImages')
+    files = get_image_list('../VOC2007/JPEGImages')
     for file in files:
         img = cv2.imread(file)
         res = predictor(img)

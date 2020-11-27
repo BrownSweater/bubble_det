@@ -75,11 +75,11 @@ class Predictor(object):
             res = self._struct_results(results)
         return res
 
-    def visualize(self, score_thres=None):
+    def visualize(self, score_thres=None, save_path=None):
         score_thres = score_thres if score_thres is not None else self.score_thresh
         time1 = time.time()
         self.model.head.show_result(self.cache['img'], self.cache['results'], self.cfg.class_names,
-                                    score_thres=score_thres, show=True)
+                                    score_thres=score_thres, show=True, save_path=save_path)
         print('viz time: {:.3f}s'.format(time.time() - time1))
 
     def _update_cache(self, img, results):
@@ -142,10 +142,10 @@ if __name__ == '__main__':
     predictor = Predictor(cfg, args['model'], device=device, score_thresh=args['score_thresh'])
     # x0, y0, x1, y1, score, label_id
     files = get_image_list('../VOC2007/JPEGImages')
-    for file in files:
+    for index, file in enumerate(files):
         img = cv2.imread(file)
         res = predictor(img)
-        predictor.visualize()
+        predictor.visualize(save_path=str(index)+'.jpg')
         ch = cv2.waitKey(0)
         print(res)
         if ch == 27 or ch == ord('q') or ch == ord('Q'):

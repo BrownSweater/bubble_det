@@ -334,7 +334,7 @@ class GFLHead(AnchorHead):
         for result in result_list:
             det_bboxes, det_labels = result
             det_bboxes = det_bboxes.cpu().numpy()
-            det_bboxes[:, :4] = warp_boxes(det_bboxes[:,:4], np.linalg.inv(warp_matrix), img_width, img_height)
+            det_bboxes[:, :4] = warp_boxes(det_bboxes[:, :4], np.linalg.inv(warp_matrix), img_width, img_height)
             classes = det_labels.cpu().numpy()
             for i in range(self.num_classes):
                 inds = (classes == i)
@@ -347,6 +347,9 @@ class GFLHead(AnchorHead):
         result = overlay_bbox_cv(img, dets, class_names, score_thresh=score_thres)
         if show:
             cv2.imshow('det', result)
+        if save_path is not None:
+            cv2.imwrite(save_path, result)
+            print(f'save img to {save_path}')
 
     def get_bboxes(self,
                    cls_scores,

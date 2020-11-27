@@ -54,7 +54,7 @@
 
 ## 3、算法训练
 
-根据**[nanodet](!https://github.com/RangiLyu/nanodet)**的文档，准备配置文件，进行训练。
+根据**[nanodet](https://github.com/RangiLyu/nanodet)**的文档，准备配置文件，进行训练。
 
 ```shell
 python tools/train.py config/bubble.yml

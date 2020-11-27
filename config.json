@@ -1,0 +1,6 @@
+{
+    "config":"/Users/wangjunjie/project/nanodet/config/bubble.yml",
+    "device": "cpu",
+    "model": "/Users/wangjunjie/project/nanodet/models/model_bubble.pth",
+    "score_thresh": 0.5
+}

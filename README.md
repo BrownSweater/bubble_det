@@ -5,7 +5,7 @@
 - 1、球体检测。
 - 2、运行在树莓派上，要求速度足够快。
 
-由于自己之前做过的视觉任务都是运行在GPU或者服务器上的CPU上，所以手中现有的项目可能无法满足此需求。由此展开调研，最后选用了最新开源的[nanodet](!https://github.com/RangiLyu/nanodet)项目，简而言之就是轻量化了**FCOS**。有关**FCOS**的论文细节我在简书里已经总结了：https://www.jianshu.com/p/e988c15f7d33。
+由于自己之前做过的视觉任务都是运行在GPU或者服务器上的CPU上，所以手中现有的项目可能无法满足此需求。由此展开调研，最后选用了最新开源的[nanodet](https://github.com/RangiLyu/nanodet)项目，简而言之就是轻量化了**FCOS**。有关**FCOS**的论文细节我在简书里已经总结了：https://www.jianshu.com/p/e988c15f7d33。
 
 
 
